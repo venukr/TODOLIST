@@ -47,7 +47,16 @@ function App() {
                  value={obj.status} name="" id="" />
                 <p>{obj.text}</p>
               </div>
-              <div className="right">
+              <div className="right" onClick={(e)=>{
+                setToDos(toDos.filter((obj2)=>{
+                  let temp
+                  if(obj2.id!==obj.id){
+                    temp=obj2
+                  }
+                  return temp;
+                }))
+              }
+              }>
                 <i className="fas fa-times" ></i>
               </div>
             </div>
